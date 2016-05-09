@@ -92,3 +92,8 @@ export NVM_DIR="/home/diego/.nvm"
 
 export PATH=${PATH}:~/Android/Sdk/tools
 export PATH=${PATH}:~/Android/Sdk/platform-tools
+
+
+fortune | cowsay -pn -f squirrel
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
