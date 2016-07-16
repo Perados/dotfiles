@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 alias keyboard='xmodmap ~/keyboard-config/.xmodmap'
 
 export NVM_DIR="/home/diego/.nvm"
@@ -97,3 +97,21 @@ export PATH=${PATH}:~/Android/Sdk/platform-tools
 fortune | cowsay -pn -f squirrel
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Locale ###
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+### Chauffeur-Privé environment variables ###
+source $HOME/.cpenv
+
+## Hotkeys for mac ##
+bindkey "OD" backward-word
+bindkey "OC" forward-word
+
+## nvm ##
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
