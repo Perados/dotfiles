@@ -3,7 +3,7 @@ unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
 elif [[ "$unamestr" == 'Darwin' ]]; then
-   platform='freebsd'
+   platform='mac'
 fi
 
 # Path to your oh-my-zsh installation.
@@ -92,9 +92,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-if [[ "$platform" == 'Darwin' ]]; then
+if [[ "$platform" == 'mac' ]]; then
 	source /usr/local/bin/virtualenvwrapper.sh
-elif [[ "$unamestr" == 'Linux' ]]; then
+elif [[ "$platform" == 'linux' ]]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
@@ -130,7 +130,7 @@ source $HOME/.cpenv
 
 
 ### Config for Mac ###
-if [[ "$platform" == 'Darwin' ]]; then
+if [[ "$platform" == 'mac' ]]; then
 	## Hotkeys for mac ##
 	bindkey "OD" backward-word
 	bindkey "OC" forward-word
