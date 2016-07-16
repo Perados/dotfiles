@@ -1,3 +1,11 @@
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='freebsd'
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -84,7 +92,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-source /usr/bin/virtualenvwrapper.sh
+if [[ "$platform" == 'Darwin' ]]; then
+	source /usr/local/bin/virtualenvwrapper.sh
+elif [[ "$unamestr" == 'Linux' ]]; then
+	source /usr/bin/virtualenvwrapper.sh
+fi
+
 alias keyboard='xmodmap ~/keyboard-config/.xmodmap'
 
 export NVM_DIR="/home/diego/.nvm"
@@ -97,3 +110,22 @@ export PATH=${PATH}:~/Android/Sdk/platform-tools
 fortune | cowsay -pn -f squirrel
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Locale ###
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+### Chauffeur-Privé environment variables ###
+source $HOME/.cpenv
+
+
+### Config for Mac ###
+if [[ "$platform" == 'Darwin' ]]; then
+	## Hotkeys for mac ##
+	bindkey "OD" backward-word
+	bindkey "OC" forward-word
+
+	## nvm ##
+	export NVM_DIR="$HOME/.nvm"
+	. "$(brew --prefix nvm)/nvm.sh"
+fi
