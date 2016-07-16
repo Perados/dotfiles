@@ -115,7 +115,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-<<<<<<< HEAD
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -126,10 +125,6 @@ source $HOME/.cpenv
 bindkey "OD" backward-word
 bindkey "OC" forward-word
 
-## nvm ##
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
-=======
 ### Chauffeur-Privé environment variables ###
 source $HOME/.cpenv
 
@@ -144,4 +139,3 @@ if [[ "$platform" == 'Darwin' ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "$(brew --prefix nvm)/nvm.sh"
 fi
->>>>>>> 491e2e9b3a82a64324266eb3f6caab65539764ba
