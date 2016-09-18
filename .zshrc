@@ -1,3 +1,11 @@
+# History configuration
+HISTFILE=~/.histfile
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# Vim in zsh
+bindkey -v
+
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -124,10 +132,6 @@ source $HOME/.cpenv
 ## Hotkeys for mac ##
 bindkey "OD" backward-word
 bindkey "OC" forward-word
-
-### Chauffeur-Privé environment variables ###
-source $HOME/.cpenv
-
 
 ### Config for Mac ###
 if [[ "$platform" == 'mac' ]]; then
