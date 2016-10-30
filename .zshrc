@@ -143,3 +143,15 @@ if [[ "$platform" == 'mac' ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "$(brew --prefix nvm)/nvm.sh"
 fi
+
+# ssh autocompletion for mosh
+compdef mosh=ssh
+
+### Anaconda configuration ###
+# added by Anaconda3 4.0.0 installer
+#export PATH="//anaconda/bin:$PATH"
+
+# added by Anaconda3 4.0.0 installer
+#export PATH="/Users/diego/anaconda3/bin:$PATH"
+#
+#alias crontab="VIM_CRONTAB=true EDITOR=vim crontab"
