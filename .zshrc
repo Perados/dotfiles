@@ -126,9 +126,6 @@ export LANG=en_US.UTF-8
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-### Chauffeur-Privé environment variables ###
-source $HOME/.cpenv
-
 ## Hotkeys for mac ##
 bindkey "OD" backward-word
 bindkey "OC" forward-word
@@ -155,3 +152,7 @@ compdef mosh=ssh
 #export PATH="/Users/diego/anaconda3/bin:$PATH"
 #
 #alias crontab="VIM_CRONTAB=true EDITOR=vim crontab"
+#
+
+# Spark
+export PATH=$PATH:/usr/local/spark/bin
