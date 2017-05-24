@@ -126,15 +126,12 @@ export LANG=en_US.UTF-8
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-## Hotkeys for mac ##
-bindkey "OD" backward-word
-bindkey "OC" forward-word
 
 ### Config for Mac ###
 if [[ "$platform" == 'mac' ]]; then
 	## Hotkeys for mac ##
-	bindkey "OD" backward-word
-	bindkey "OC" forward-word
+	bindkey "D" backward-word
+	bindkey "C" forward-word
 
 	## nvm ##
 	export NVM_DIR="$HOME/.nvm"
