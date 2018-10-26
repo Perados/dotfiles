@@ -21,7 +21,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+ZSH_THEME="honukai"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,14 +99,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+#
+### Virtualenvwrapper ###
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 if [[ "$platform" == 'mac' ]]; then
-	source /usr/local/bin/virtualenvwrapper.sh
+	source `which virtualenvwrapper.sh`
+	alias vim /usr/local/bin/vim
 elif [[ "$platform" == 'linux' ]]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
-
-alias keyboard='xmodmap ~/keyboard-config/.xmodmap'
 
 export NVM_DIR="/home/diego/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -115,7 +117,8 @@ export PATH=${PATH}:~/Android/Sdk/tools
 export PATH=${PATH}:~/Android/Sdk/platform-tools
 
 
-fortune | cowsay -pn -f squirrel
+### Thi adds a fortune squirrel to startup. https://github.com/schacon/cowsay ###
+fortune | cowsay -pn -f squirrel | lolcat
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
@@ -128,17 +131,17 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ### Config for Mac ###
-if [[ "$platform" == 'mac' ]]; then
-	## Hotkeys for mac ##
-	bindkey "D" backward-word
-	bindkey "C" forward-word
+# if [[ "$platform" == 'mac' ]]; then
+# 	## Hotkeys for mac ##
+# 	bindkey "D" backward-word
+# 	bindkey "C" forward-word
+# 
+# 	## nvm ##
+# 	export NVM_DIR="$HOME/.nvm"
+# 	. "$(brew --prefix nvm)/nvm.sh"
+# fi
 
-	## nvm ##
-	export NVM_DIR="$HOME/.nvm"
-	. "$(brew --prefix nvm)/nvm.sh"
-fi
-
-# ssh autocompletion for mosh
+### ssh autocompletion for mosh ###
 compdef mosh=ssh
 
 ### Anaconda configuration ###
@@ -151,5 +154,13 @@ compdef mosh=ssh
 #alias crontab="VIM_CRONTAB=true EDITOR=vim crontab"
 #
 
-# Spark
+
+### Spark ###
 export PATH=$PATH:/usr/local/spark/bin
+
+### NodeJS
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+### OLX Group
+source ~/.olxrc

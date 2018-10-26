@@ -10,4 +10,4 @@ fi
 
 # User specific aliases and functions
 
-. /usr/bin/virtualenvwrapper.sh
+. `which virtualenvwrapper.sh`
