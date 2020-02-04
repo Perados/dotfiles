@@ -17,6 +17,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'mileszs/ack.vim'
+Plugin 'psf/black'
+Plugin 'heavenshell/vim-pydocstring'
 
 
 " All of your Plugins must be added before the following line
@@ -106,11 +108,13 @@ map <leader>n  :NERDTreeToggle<CR>
 map <leader>l  :set number!<CR>
 map <leader>p  :set paste!<CR>
 map <leader>h  :set hlsearch!<CR>
-map <leader>b  :CtrlPBuffer<CR>
+map <leader>f  :CtrlPBuffer<CR>
 map <leader>w  :Ack <cword><CR>
 map <leader>a  :Ack<Space>
 "map <C-n>      :bnext<CR>
 "map <C-p>      :bprev<CR>
+nmap <leader>d <Plug>(pydocstring)
+
 
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |

@@ -1,7 +1,7 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-brew install python python3 fortune cowsay lolcat wget vim cmake ack awscli colordiff postgresql readline s3cmd wget yarn
+brew install python python3 fortune cowsay lolcat wget vim cmake ack awscli colordiff postgresql readline s3cmd wget yarn grip
 
 pip install virtualenvwrapper
 
