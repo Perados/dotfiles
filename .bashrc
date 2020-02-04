@@ -11,3 +11,4 @@ fi
 # User specific aliases and functions
 
 . `which virtualenvwrapper.sh`
+alias aws-okta=". ~/.aws_okta/aws-okta"
