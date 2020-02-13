@@ -19,6 +19,7 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'mileszs/ack.vim'
 Plugin 'psf/black'
 Plugin 'heavenshell/vim-pydocstring'
+Plugin 'zivyangll/git-blame.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -114,6 +115,7 @@ map <leader>a  :Ack<Space>
 "map <C-n>      :bnext<CR>
 "map <C-p>      :bprev<CR>
 nmap <leader>d <Plug>(pydocstring)
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 
 au BufNewFile,BufRead *.js, *.html, *.css
