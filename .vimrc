@@ -98,13 +98,6 @@ set hlsearch
 "powerline
 "let g:Powerline_symbols = 'fancy'
 
-"ag for ack.vim
-"let g:ackprg = 'ag --nogroup --nocolor --column'
-"
-"rg for ack.vim
-let g:ackprg = 'rg --vimgrep --no-heading'
-
-
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>v  :call UseProperVirtualEnv()<CR>
 map <leader>n  :NERDTreeToggle<CR>
@@ -154,10 +147,17 @@ if executable('ag')
 
   " " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  "ag for ack.vim
+  let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
+
+  "rg for ack.vim
+  let g:ackprg = 'rg --vimgrep --no-heading'
 endif
+
