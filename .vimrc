@@ -99,8 +99,10 @@ set hlsearch
 "let g:Powerline_symbols = 'fancy'
 
 "ag for ack.vim
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+"
+"rg for ack.vim
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
