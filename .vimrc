@@ -110,7 +110,8 @@ map <leader>a  :Ack<Space>
 "map <C-n>      :bnext<CR>
 "map <C-p>      :bprev<CR>
 nmap <leader>d <Plug>(pydocstring)
-nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
+vnoremap <leader>j :! jq<CR>
 
 
 au BufNewFile,BufRead *.js, *.html, *.css
