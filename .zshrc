@@ -104,10 +104,10 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 ### Virtualenvwrapper ###
-# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 if [[ "$platform" == 'mac' ]]; then
-	source `which virtualenvwrapper.sh`
+	source /usr/local/bin/virtualenvwrapper.sh
 	alias vim /usr/local/bin/vim
 elif [[ "$platform" == 'linux' ]]; then
 	source /usr/bin/virtualenvwrapper.sh
@@ -159,8 +159,9 @@ alias gl='git log --pretty=format:'\''%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %
 
 ### pyenv
 export PATH="/Users/diego.moracespedes/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
