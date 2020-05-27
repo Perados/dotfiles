@@ -23,6 +23,9 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="honukai"
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=green,bg=black,bold,underline"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -110,9 +113,6 @@ elif [[ "$platform" == 'linux' ]]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
-export NVM_DIR="/home/diego/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export PATH=${PATH}:~/Android/Sdk/tools
 export PATH=${PATH}:~/Android/Sdk/platform-tools
 
@@ -126,20 +126,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-
-### Config for Mac ###
-# if [[ "$platform" == 'mac' ]]; then
-# 	## Hotkeys for mac ##
-# 	bindkey "D" backward-word
-# 	bindkey "C" forward-word
-# 
-# 	## nvm ##
-# 	export NVM_DIR="$HOME/.nvm"
-# 	. "$(brew --prefix nvm)/nvm.sh"
-# fi
 
 ### ssh autocompletion for mosh ###
 compdef mosh=ssh
@@ -157,10 +143,41 @@ compdef mosh=ssh
 
 ### Spark ###
 export PATH=$PATH:/usr/local/spark/bin
+alias spark-shell-2.4.4='~/spark/spark-2.4.4-bin-hadoop2.7/bin/spark-shell'
+alias spark-shell-2.4.2='~/spark/spark-2.4.2-bin-hadoop2.7/bin/spark-shell'
 
 ### NodeJS
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ### OLX Group
 source ~/.olxrc
+
+### Git
+alias gl='git log --pretty=format:'\''%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'\'' --date=short --decorate=full'
+
+### pyenv
+export PATH="/Users/diego.moracespedes/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+alias aws-okta=". ~/.aws_okta/aws-okta"
+
+# Kubectl
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias ptodo="vim ~/workspace/todo"
+alias pnotes="vim ~/workspace/notes"
