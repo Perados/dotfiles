@@ -151,21 +151,17 @@ alias spark-shell-2.4.2='~/spark/spark-2.4.2-bin-hadoop2.7/bin/spark-shell'
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-### OLX Group
-source ~/.olxrc
-
 ### Git
 alias gl='git log --pretty=format:'\''%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'\'' --date=short --decorate=full'
 
 ### pyenv
 export PATH="/Users/diego.moracespedes/.pyenv/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-alias aws-okta=". ~/.aws_okta/aws-okta"
 
 # Kubectl
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
