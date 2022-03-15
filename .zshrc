@@ -104,10 +104,10 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 ### Virtualenvwrapper ###
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/Users/diego/.pyenv/shims/python
 
 if [[ "$platform" == 'mac' ]]; then
-	source /usr/local/bin/virtualenvwrapper.sh
+	source /opt/homebrew/bin/virtualenvwrapper.sh
 	alias vim /usr/local/bin/vim
 elif [[ "$platform" == 'linux' ]]; then
 	source /usr/bin/virtualenvwrapper.sh
