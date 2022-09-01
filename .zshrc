@@ -176,5 +176,6 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias ptodo="vim ~/workspace/todo"
-alias pnotes="vim ~/workspace/notes"
+alias todo="vim ~/workspace/chainlink/todo"
+alias notes="vim ~/workspace/chainlink/notes"
+alias 1000days="python ~/workspace/dotfiles/1000days.py"

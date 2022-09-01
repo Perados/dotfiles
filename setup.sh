@@ -7,7 +7,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update && brew upgrade
 brew doctor
 
-brew install python python3 fortune cowsay lolcat wget vim cmake ack awscli colordiff postgresql readline s3cmd wget yarn grip fzf go nvm pyenv scala sbt npm kubectl jq ripgrep
+brew install python python3 fortune cowsay lolcat wget vim cmake ack awscli colordiff postgresql readline s3cmd wget yarn grip fzf go nvm pyenv scala sbt npm kubectl jq ripgrep pipenv
 $(brew --prefix)/opt/fzf/install
 
 sudo easy_install pip
